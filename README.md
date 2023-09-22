@@ -13,5 +13,5 @@ Explore the efficiency of sorting algorithms and analyze their performance with 
 
 ## Authors
 
-    Franklin Obiukwu 
+    Franklin Obiukwu
     Siduduzile Snenhlanhla Mdima
