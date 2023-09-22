@@ -36,7 +36,6 @@ void selection_sort(int *array, size_t size)
 				sort = 1;
 			}
 		}
-
 		/*Swap first element and minimum element*/
 		if (sort == 1)
 		{
@@ -49,6 +48,5 @@ void selection_sort(int *array, size_t size)
 		}
 		/*Reset sort*/
 		sort = 0;
-
 	}
 }
