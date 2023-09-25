@@ -5,7 +5,6 @@ int partition(int *array, int start_idx, int end_idx,
 	      int *original_array, int original_size);
 void quick_sort_pro(int *array, size_t size,
 		    int *original_array, size_t original_size);
-void quick_sort(int *array, size_t size);
 
 /**
  * swap - Function that swaps two arrays
