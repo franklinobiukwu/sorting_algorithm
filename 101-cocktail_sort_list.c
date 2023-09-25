@@ -12,7 +12,7 @@ void swap_node(listint_t **list, listint_t *first_node, listint_t *second_node)
 {
 	if (*list == NULL || first_node == NULL || second_node == NULL)
 		return;
-	
+
 }
 
 /**
@@ -23,8 +23,7 @@ void swap_node(listint_t **list, listint_t *first_node, listint_t *second_node)
 void cocktail_sort_list(listint_t **list)
 {
 	int swapped = 1;
-	listint_t *start = NULL;
-	listint_t *end = NULL;
+	listint_t *start = NULL, *end = NULL;
 
 	/*If list provided is empty - actions to take*/
 	if (*list == NULL || list == NULL)
@@ -43,15 +42,11 @@ void cocktail_sort_list(listint_t **list)
 				print_list(*list); /*print updated list*/
 			}
 			else
-			{
 				start = start->next;/*moved to next values*/
-			}
 		}
 		end = start; /*end, swap directions*/
 		if (!swapped) /*if swap doesnt occur, break loop*/
-		{
 			break; /*means its sorted*/
-		}
 		swapped = 0;/*reset swap, for opposite direction*/
 		end = end->prev; /*end my equal second to last value*/
 		while (end->prev != start) /*end != last value cause = sorted*/
@@ -63,9 +58,7 @@ void cocktail_sort_list(listint_t **list)
 				print_list(*list);/*print updated list*/
 			}
 			else
-			{
 				end = end->prev; /*move backwards in array*/
-			}
 		}
 		start = end; /*swap directions again*/
 	}
