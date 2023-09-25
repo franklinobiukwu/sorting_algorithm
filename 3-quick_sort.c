@@ -1,5 +1,4 @@
 #include "sort.h"
-#include <stddef.h>
 
 void swap(int *arr_elem_one, int *arr_elem_two);
 int partition(int *array, int start_idx, int end_idx,
