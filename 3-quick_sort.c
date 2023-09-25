@@ -104,5 +104,8 @@ void quick_sort(int *array, size_t size)
 	int *original_array = array;
 	int original_size = size;
 
+	if (array == NULL || size < 2)
+		return;
+
 	quick_sort_pro(array, size, original_array, original_size);
 }
