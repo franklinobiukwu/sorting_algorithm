@@ -13,6 +13,7 @@ void quick_sort_pro(int *array, size_t size,
  * @arr_elem_one: pointer to first array element to swap
  * @arr_elem_two: pointer to second array element to swap
  */
+
 void swap(int *arr_elem_one, int *arr_elem_two)
 {
 	int temp;
@@ -89,6 +90,7 @@ void quick_sort_pro(int *array, size_t size,
 		original_array, original_size);
 }
 
+
 /**
 * quick_sort - Function that sorts array of integers
 * in ascending order using the quick sort algorithm
@@ -104,4 +106,3 @@ void quick_sort(int *array, size_t size)
 
 	quick_sort_pro(array, size, original_array, original_size);
 }
-
