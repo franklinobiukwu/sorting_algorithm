@@ -12,20 +12,24 @@ void swap_node(listint_t **list, listint_t *first_node, listint_t *second_node)
 {
 	if (*list == NULL || first_node == NULL || second_node == NULL)
 		return;
-	
+
 	if (first_node->prev != NULL)
-        first_node->prev->next = second_node;
+	{
+		first_node->prev->next = second_node;
+	}
+	if (second_node->next != NULL)
+	{
+		second_node->next->prev = first_node;
+	}
+	first_node->next = second_node->next;
+	second_node->prev = first_node->prev;
+	first_node->prev = second_node;
+	second_node->next = first_node;
 
-    if (second_node->next != NULL)
-        second_node->next->prev = first_node;
-
-    first_node->next = second_node->next;
-    second_node->prev = first_node->prev;
-    first_node->prev = second_node;
-    second_node->next = first_node;
-
-    if (first_node == *list)
-        *list = second_node;
+	if (first_node == *list)
+	{
+		*list = second_node;
+	}
 }
 
 /**
