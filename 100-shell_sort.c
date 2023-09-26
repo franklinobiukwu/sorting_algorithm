@@ -1,6 +1,4 @@
 #include "sort.h"
-#include <stdio.h>
-
 
 
 /**
@@ -26,27 +24,42 @@ void swap(int *elem_one, int *elem_two)
 
 void shell_sort(int *array, size_t size)
 {
-	size_t i;
-	size_t gap = 1;
+	int i, j, k;
+	int gap = 1, flag = 0;
 
 	if (array == NULL || size < 2)
 		return;
 	
-	while (gap < size)
+	while (gap < (int)size / 3)
 		gap = gap * 3 + 1;
 
 	while (gap >= 1)
 	{
-		printf("Gap is: %ld\n", gap);
-		for (i = 0; i < size - 1; i++)
+		for (i = 0, j = gap; j < (int)size; i++, j++)
 		{
-			if (array[i] > array[gap + i])
+			if (array[i] > array[j])
 			{
-				swap(&array[i], &array[gap]);
-				print_array(array, size);
+				swap(&array[i], &array[j]);
+/*				print_array(array, size);*/
+				flag = 1;
 			}
+
+			if (flag == 1)
+			{
+				k = i;
+				while ((k - gap) >= 0)
+				{
+					if (array[k - gap] > array[k])
+					{
+						swap(&array[k - gap], &array[k]);
+					}
+					k = k - gap;
+				}
+			}
+			flag = 0;
 		}
 
 		gap = gap/3;
+		print_array(array, size);
 	}
 }
