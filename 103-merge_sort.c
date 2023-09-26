@@ -1,7 +1,7 @@
 #include "sort.h"
 
 /**
-* merge_sort - implementation on merge_sort algorithm
+* merge_sort - implementation of the merge_sort algorithm
 * @array: Pointer to unsorted array
 * @size: Length of unsorted array
 * Return: void
@@ -12,11 +12,12 @@ void merge_sort(int *array, size_t size)
 	{
 		return;
 	}
+	printf("Merging...\n");
 	merge_sort_recursion(array, 0, size - 1);
 }
 
 /**
-* merge_sort_recursion - function to break the array to sub-array portions
+* merge_sort_recursion - function to break the array into sub-array portions
 * @array: Pointer to unsorted array
 * @left: Left portion of array
 * @right: Right portion of array
@@ -55,14 +56,27 @@ void merge_sorted_array(int *array, int left, int middle, int right)
 	{
 		return;
 	}
+
+	printf("[left]: ");
 	for (i = 0; i < left_length; i++)
 	{
 		temp_left[i] = array[left + i];
+		printf("%d", temp_left[i]);
+		if (i < left_length - 1)
+			printf(", ");
 	}
+	printf("\n");
+
+	printf("[right]: ");
 	for (j = 0; j < right_length; j++)
 	{
 		temp_right[j] = array[middle + 1 + j];
+		printf("%d", temp_right[j]);
+		if (j < right_length - 1)
+			printf(", ");
 	}
+	printf("\n");
+
 	i = 0;
 	j = 0;
 	k = left;
@@ -80,6 +94,7 @@ void merge_sorted_array(int *array, int left, int middle, int right)
 		}
 		k++;
 	}
+
 	while (i < left_length)
 	{
 		array[k] = temp_left[i];
@@ -92,6 +107,16 @@ void merge_sorted_array(int *array, int left, int middle, int right)
 		j++;
 		k++;
 	}
+
+	printf("[Done]: ");
+	for (i = left; i <= right; i++)
+	{
+		printf("%d", array[i]);
+		if (i < right)
+			printf(", ");
+	}
+	printf("\n");
+
 	free(temp_left);
 	free(temp_right);
 }
