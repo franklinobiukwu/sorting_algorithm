@@ -33,6 +33,7 @@ void merge_sort_recursion(int *array, int left, int right)
 		merge_sorted_array(array, left, middle, right);
 	}
 }
+
 /**
 * merge_sorted_array - function that merges the sorted single indexed array
 * @array: Pointer to the array
@@ -51,7 +52,9 @@ void merge_sorted_array(int *array, int left, int middle, int right)
 	int *temp_right = malloc(sizeof(int) * right_length);
 
 	if (temp_left == NULL || temp_right == NULL)
+	{
 		return;
+	}
 	for (i = 0; i < left_length; i++)
 	{
 		temp_left[i] = array[left + i];
@@ -63,10 +66,6 @@ void merge_sorted_array(int *array, int left, int middle, int right)
 	i = 0;
 	j = 0;
 	k = left;
-	printf("Merging...\n[left]: ");
-	print_array(temp_left, left_length);
-	printf("[right]: ");
-	print_array(temp_right, right_length);
 	while (i < left_length && j < right_length)
 	{
 		if (temp_left[i] <= temp_right[j])
@@ -93,9 +92,6 @@ void merge_sorted_array(int *array, int left, int middle, int right)
 		j++;
 		k++;
 	}
-	printf("[Done]: ");
-	print_array(&array[left], right - left + 1);
-
 	free(temp_left);
 	free(temp_right);
 }
