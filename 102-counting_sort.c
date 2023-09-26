@@ -1,6 +1,4 @@
 #include "sort.h"
-#include <stddef.h>
-#include <stdio.h>
 
 /**
  * find_max - find largest integer element in an array
