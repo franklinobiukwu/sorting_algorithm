@@ -48,13 +48,13 @@ int partition(int *array, int start_idx, int end_idx,
 		{
 			i++;
 			swap(&array[i], &array[j]);
-			if (i != j)
+			if (i != j && array[i] != array[j])
 				print_array(original_array, original_size);
 		}
 	}
 	/* swap pivot to correct position */
 	swap(&array[i + 1], &array[end_idx]);
-	if ((i + 1) != end_idx)
+	if ((i + 1) != end_idx && array[i + 1] != array[end_idx])
 		print_array(original_array, original_size);
 
 	return (i + 1);
