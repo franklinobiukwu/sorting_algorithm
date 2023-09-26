@@ -33,6 +33,6 @@ void quick_sort(int *array, size_t size);
 /* Function prototypes for advanced tasks*/
 void shell_sort(int *array, size_t size);
 void cocktail_sort_list(listint_t **list);
-
+void swap_node(listint_t **list, listint_t *first_node, listint_t *second_node);
 
 #endif
