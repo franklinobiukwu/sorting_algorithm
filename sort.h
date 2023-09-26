@@ -34,5 +34,8 @@ void quick_sort(int *array, size_t size);
 void shell_sort(int *array, size_t size);
 void cocktail_sort_list(listint_t **list);
 void swap_node(listint_t **list, listint_t *first_node, listint_t *second_node);
+void merge_sorted_array(int *array, int left, int middle, int right);
+void merge_sort_recursion(int *array, int left, int right);
+void merge_sort(int *array, size_t size);
 
 #endif
