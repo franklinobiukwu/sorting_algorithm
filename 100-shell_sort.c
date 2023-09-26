@@ -18,8 +18,8 @@ void swap(int *elem_one, int *elem_two)
 /**
 * shell_sort - sort array of integers using the shell sort algorithm
 *
-* @array - array to be sorted
-* @size - size of array
+* @array: array to be sorted
+* @size: size of array
 */
 
 void shell_sort(int *array, size_t size)
@@ -29,7 +29,7 @@ void shell_sort(int *array, size_t size)
 
 	if (array == NULL || size < 2)
 		return;
-	
+
 	while (gap < (int)size / 3)
 		gap = gap * 3 + 1;
 
@@ -59,7 +59,7 @@ void shell_sort(int *array, size_t size)
 			flag = 0;
 		}
 
-		gap = gap/3;
+		gap = gap / 3;
 		print_array(array, size);
 	}
 }
