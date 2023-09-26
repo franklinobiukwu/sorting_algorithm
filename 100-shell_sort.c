@@ -27,7 +27,6 @@ void shell_sort(int *array, size_t size)
 	int i, j, k;
 	int gap = 1, flag = 0;
 
-	/* return if array is NULL or less than 2*/
 	if (array == NULL || size < 2)
 		return;
 
@@ -35,7 +34,6 @@ void shell_sort(int *array, size_t size)
 	while (gap < (int)size / 3)
 		gap = gap * 3 + 1;
 
-	/* Operate while gap is greater than 1*/
 	while (gap >= 1)
 	{
 		/* Pass throgh array and compare two distant(gap) elements */
@@ -48,10 +46,7 @@ void shell_sort(int *array, size_t size)
 				flag = 1;
 			}
 
-			/* 
-			 * Operate if there is a swap,
-			 * ompare swapped RHS element with more LHS element
-			 */
+			 /*if swap, compare swapped RHS element with more LHS element*/
 			if (flag == 1)
 			{
 				k = i;
@@ -59,9 +54,7 @@ void shell_sort(int *array, size_t size)
 				{
 					/* Swap if LHS element is greater than swapped RHS element */
 					if (array[k - gap] > array[k])
-					{
 						swap(&array[k - gap], &array[k]);
-					}
 					k = k - gap;
 				}
 			}
