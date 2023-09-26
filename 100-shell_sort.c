@@ -27,27 +27,37 @@ void shell_sort(int *array, size_t size)
 	int i, j, k;
 	int gap = 1, flag = 0;
 
+	/* return if array is NULL or less than 2*/
 	if (array == NULL || size < 2)
 		return;
 
+	/* Generate gap interval */
 	while (gap < (int)size / 3)
 		gap = gap * 3 + 1;
 
+	/* Operate while gap is greater than 1*/
 	while (gap >= 1)
 	{
+		/* Pass throgh array and compare two distant(gap) elements */
 		for (i = 0, j = gap; j < (int)size; i++, j++)
 		{
+			/* Swap compared element if lesser element is at the RHS*/
 			if (array[i] > array[j])
 			{
 				swap(&array[i], &array[j]);
 				flag = 1;
 			}
 
+			/* 
+			 * Operate if there is a swap,
+			 * ompare swapped RHS element with more LHS element
+			 */
 			if (flag == 1)
 			{
 				k = i;
 				while ((k - gap) >= 0)
 				{
+					/* Swap if LHS element is greater than swapped RHS element */
 					if (array[k - gap] > array[k])
 					{
 						swap(&array[k - gap], &array[k]);
